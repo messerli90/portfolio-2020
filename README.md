@@ -1,6 +1,6 @@
-# portfolio
+# My personal website
 
-> My personal website
+> portfolio site
 
 ## Build Setup
 
@@ -19,4 +19,4 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Built on [Nuxt.js](https://nuxtjs.org).
