@@ -1,5 +1,15 @@
 <template>
-  <div>
+  <div class="h-screen bg-gray-800">
+    <Header />
     <nuxt />
   </div>
 </template>
+
+<script>
+import Header from '@/layouts/partials/Header'
+export default {
+  components: {
+    Header
+  }
+}
+</script>

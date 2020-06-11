@@ -1,13 +1,9 @@
 <template>
   <div class="container">
-    Michael Messerli
+    Home Page
   </div>
 </template>
 
-<script>
-export default {
-  components: {}
-}
-</script>
+<script></script>
 
 <style></style>
