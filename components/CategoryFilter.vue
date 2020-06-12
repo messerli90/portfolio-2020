@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto max-w-xl grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-    <ProjectsFilterItem
+    <CategoryFilterItem
       v-for="(category, i) in categories"
       :key="i"
       :category="category"
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import ProjectsFilterItem from '@/components/ProjectsFilterItem'
+import CategoryFilterItem from '@/components/CategoryFilterItem'
 export default {
   components: {
-    ProjectsFilterItem
+    CategoryFilterItem
   },
   data() {
     return {

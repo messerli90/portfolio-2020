@@ -3,19 +3,22 @@
     <h2 class="my-8 text-center text-4xl font-semibold text-gray-100">
       Projects
     </h2>
-    <ProjectsFilter />
-    <div class="mx-auto my-8 max-w-4xl grid grid-cols-2 gap-4">
+    <CategoryFilter />
+    <TagFilter />
+    <div class="mx-auto my-4 max-w-4xl grid grid-cols-2 gap-4">
       <ProjectCard v-for="(p, i) in projects" :key="i" :project="p" />
     </div>
   </div>
 </template>
 
 <script>
-import ProjectsFilter from '@/components/ProjectsFilter'
+import CategoryFilter from '@/components/CategoryFilter'
+import TagFilter from '@/components/TagFilter'
 import ProjectCard from '@/components/ProjectCard'
 export default {
   components: {
-    ProjectsFilter,
+    CategoryFilter,
+    TagFilter,
     ProjectCard
   },
   computed: {
