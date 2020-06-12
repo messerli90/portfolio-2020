@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     setCurrent() {
-      this.$store.commit('packages/setCurrentTag', this.tag)
+      this.$store.dispatch('packages/updateCurrentTag', this.tag)
     }
   }
 }

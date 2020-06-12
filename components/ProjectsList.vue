@@ -1,23 +1,27 @@
 <template>
   <div>
-    <h2>Projects</h2>
-    <div class="">
-      <ProjectsFilter />
-    </div>
-    <div>
-      <!-- List container -->
-      <div>
-        Project Card
-      </div>
+    <h2 class="my-8 text-center text-4xl font-semibold text-gray-100">
+      Projects
+    </h2>
+    <ProjectsFilter />
+    <div class="mx-auto my-8 max-w-4xl grid grid-cols-2 gap-4">
+      <ProjectCard v-for="(p, i) in projects" :key="i" :project="p" />
     </div>
   </div>
 </template>
 
 <script>
 import ProjectsFilter from '@/components/ProjectsFilter'
+import ProjectCard from '@/components/ProjectCard'
 export default {
   components: {
-    ProjectsFilter
+    ProjectsFilter,
+    ProjectCard
+  },
+  computed: {
+    projects() {
+      return this.$store.state.packages.filteredProjects
+    }
   },
   methods: {
     //
