@@ -7,29 +7,31 @@
   >
     <span class="m-2 text-orange-200">
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-        <path clip-rule="evenodd" fill-rule="evenodd" :d="tag.icon"></path>
+        <path clip-rule="evenodd" fill-rule="evenodd" :d="category.icon"></path>
       </svg>
     </span>
-    <span class="text-orange-100">{{ tag.name }}</span>
+    <span class="text-orange-100">{{ category.name }}</span>
   </button>
 </template>
 
 <script>
 export default {
   props: {
-    tag: {
+    category: {
       type: Object,
       required: true
     }
   },
   computed: {
     active() {
-      return this.tag.slug === this.$store.state.packages.currentTag?.slug
+      return (
+        this.category.slug === this.$store.state.projects.currentCategory?.slug
+      )
     }
   },
   methods: {
     setCurrent() {
-      this.$store.dispatch('packages/updateCurrentTag', this.tag)
+      this.$store.dispatch('projects/updateCurrentCategory', this.category)
     }
   }
 }

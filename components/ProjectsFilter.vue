@@ -1,6 +1,10 @@
 <template>
   <div class="mx-auto max-w-xl grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-    <ProjectsFilterItem v-for="(tag, i) in tags" :key="i" :tag="tag" />
+    <ProjectsFilterItem
+      v-for="(category, i) in categories"
+      :key="i"
+      :category="category"
+    />
   </div>
 </template>
 
@@ -16,8 +20,8 @@ export default {
     }
   },
   computed: {
-    tags() {
-      return this.$store.state.packages.tags
+    categories() {
+      return this.$store.state.projects.categories
     }
   },
   methods: {

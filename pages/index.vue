@@ -12,7 +12,7 @@ export default {
     ProjectList
   },
   created() {
-    this.$store.dispatch('packages/initState')
+    this.$store.dispatch('projects/initState')
   }
 }
 </script>

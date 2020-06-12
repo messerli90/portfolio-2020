@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     projects() {
-      return this.$store.state.packages.filteredProjects
+      return this.$store.state.projects.filteredProjects
     }
   },
   methods: {
