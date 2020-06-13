@@ -1,5 +1,5 @@
 <template>
-  <div class="my-1 mx-auto max-w-3xl flex flex-wrap justify-center">
+  <div class="block mb-3 mx-auto max-w-3xl flex flex-wrap justify-center">
     <TagFilterItem v-for="(tag, i) in tags" :key="i" :tag="tag">
     </TagFilterItem>
   </div>

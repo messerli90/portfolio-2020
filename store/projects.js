@@ -1,9 +1,8 @@
 import ProjectRepository from '@/repositories/ProjectRepository'
 import CategoryRepository from '@/repositories/CategoryRepository'
-import TagRepository from '@/repositories/TagRepository'
 
 export const state = () => ({
-  currentTag: {},
+  currentTag: '',
   currentCategory: {},
 
   tags: [],
@@ -32,23 +31,47 @@ export const mutations = {
   setFilteredProjects(state, projects) {
     state.filteredProjects = projects
   },
-  filterProjects(state, tag) {
-    // TODO make this reactive to currentTag and currentCategory
+  filterProjects(state) {
     state.filteredProjects = state.projects.filter((p) => {
-      return p.type === tag.slug
+      return p.category === state.currentCategory.name
     })
+    if (state.currentTag) {
+      state.filteredProjects = state.projects.filter((p) => {
+        return p.tags.includes(state.currentTag)
+      })
+    }
   }
 }
 
 export const actions = {
   initState({ commit }) {
-    commit('setProjects', ProjectRepository.all())
-    commit('setFilteredProjects', ProjectRepository.all())
-    commit('setTags', TagRepository.all())
+    const projects = ProjectRepository.all()
+
+    commit('setProjects', projects)
+    commit('setFilteredProjects', projects)
+    commit('setTags', getTagsFromProjects(projects))
     commit('setCategories', CategoryRepository.all())
+    commit('setCurrentCategory', CategoryRepository.all()[0])
   },
-  async updateCurrentCategory({ commit }, category) {
+  async updateCurrentCategory({ state, commit }, category) {
     await commit('setCurrentCategory', category)
-    commit('filterProjects', category)
+    await commit('setCurrentTag', '')
+    await commit('filterProjects')
+    commit('setTags', getTagsFromProjects(state.filteredProjects))
+  },
+  async updateCurrentTag({ commit }, tag) {
+    await commit('setCurrentTag', tag)
+    commit('filterProjects')
   }
+}
+
+function getTagsFromProjects(projects) {
+  const tags = projects.flatMap((project) => {
+    return project.tags
+  })
+  return tags.filter(unique)
+}
+
+function unique(value, index, self) {
+  return self.indexOf(value) === index
 }

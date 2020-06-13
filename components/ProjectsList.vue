@@ -5,7 +5,7 @@
     </h2>
     <CategoryFilter />
     <TagFilter />
-    <div class="mx-auto my-4 max-w-4xl grid grid-cols-2 gap-4">
+    <div class="mx-auto my-4 max-w-4xl grid md:grid-cols-2 gap-4">
       <ProjectCard v-for="(p, i) in projects" :key="i" :project="p" />
     </div>
   </div>

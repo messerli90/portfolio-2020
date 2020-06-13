@@ -1,5 +1,11 @@
 <template>
-  <div class="bg-gray-700 rounded-lg shadow overflow-hidden">
+  <div class="relative bg-gray-700 rounded-lg shadow overflow-hidden">
+    <span
+      class="absolute top-0 right-0 m-3 py-1 px-3 text-sm text-white rounded opacity-75 hover:opacity-100"
+      :class="categoryTagColor"
+    >
+      {{ project.category }}
+    </span>
     <img :src="project.image" alt="" class="w-full h-48 object-cover" />
     <div class="px-4 py-3">
       <h5 class="my-1 tracking-wide text-lg text-orange-500 font-medium">
@@ -36,6 +42,15 @@ export default {
     project: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    categoryTagColor() {
+      return (
+        this.$store.state.projects.categories.find(
+          (c) => c.name === this.project.category
+        )?.bgColor || 'bg-red-500'
+      )
     }
   }
 }

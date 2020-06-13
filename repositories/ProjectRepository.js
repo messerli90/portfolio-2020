@@ -12,7 +12,8 @@ const projects = [
     description:
       'Weekend Challenge. JobHuntBuddy is a web app helping job hunters manage the application process.',
     image: '/images/jobhuntbuddy_2.png',
-    type: 'webapp'
+    category: 'Web Apps',
+    tags: ['gaming', 'Laravel', 'Vue.js']
   },
   {
     title: 'Siegrs.GG',
@@ -21,6 +22,7 @@ const projects = [
     description:
       'Platform for players of Rainbow Six: Siege to browse other players and teams. Serving over 30k players',
     image: '/images/siegrs_banner_2.png',
-    type: 'webapp'
+    category: 'Web Apps',
+    tags: ['Laravel', 'Vue.js', 'mysql']
   }
 ]

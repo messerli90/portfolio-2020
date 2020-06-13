@@ -23,20 +23,8 @@
             : 'hover:text-white hover:scale-105'
         "
       >
-        <a href="/blog">
-          Blogs
-        </a>
-      </li>
-      <li
-        class="mr-6 transition transform duration-200 ease-in-out"
-        :class="
-          isActive('contact')
-            ? 'text-orange-500 scale-105'
-            : 'hover:text-white hover:scale-105'
-        "
-      >
-        <a href="/contact">
-          Contact
+        <a href="blog">
+          Blog
         </a>
       </li>
     </ul>
