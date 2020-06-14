@@ -11,12 +11,12 @@
         and I build stuff on the internet
       </p>
       <p class="mt-2 text-3xl font-light text-gray-400">
-        ... the <span class="font-medium text-indigo-500">Maker</span> of
+        ... the <span class="font-medium text-indigo-300">Maker</span> of
         JobHuntBuddy and Siegrs
       </p>
       <p class="mt-2 text-3xl font-light text-gray-400">
         ... a
-        <span class="font-medium text-indigo-500">Full Stack Developer</span>
+        <span class="font-medium text-indigo-300">Full Stack Developer</span>
         who's first love is
         <span class="font-medium text-red-500">Laravel &amp; VueJS</span> but
         enjoys tinkering and exploring new stacks

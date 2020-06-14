@@ -6,7 +6,7 @@
     >
       {{ project.category }}
     </span>
-    <img :src="project.image" alt="" class="w-full h-48 object-cover" />
+    <img :src="project.image" alt="" class="w-full h-40 object-cover" />
     <div class="px-4 py-3">
       <h5 class="my-1 tracking-wide text-lg text-orange-500 font-medium">
         {{ project.title }}
