@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/vue-agile'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -59,6 +59,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['vue-agile'],
     extend(config, ctx) {}
   }
 }

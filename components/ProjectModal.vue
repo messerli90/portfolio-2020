@@ -44,60 +44,86 @@
         aria-modal="true"
         aria-labelledby="modal-headline"
       >
-        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <div class="sm:flex sm:items-start">
-            <div
-              class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
-            >
-              <svg
-                class="h-6 w-6 text-red-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        <div
+          class="relative bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 flex flex-col"
+        >
+          <button
+            class="block absolute top-0 right-0 m-4 p-2 flex justify-center items-center rounded-full bg-gray-900 text-gray-200 z-10 opacity-75 transition transform duration-200 ease-in-out hover:scale-105 hover:opacity-100"
+            @click="closeModal"
+          >
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <client-only v-if="project.images" placeholder="Loading...">
+            <agile class="rounded-md overflow-hidden">
+              <div
+                v-for="(img, i) in project.images"
+                :key="i"
+                class="relative slide"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
-            </div>
-            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <h3
-                id="modal-headline"
-                class="text-lg leading-6 font-medium text-gray-900"
-              >
-                Deactivate account
-              </h3>
-              <div class="mt-2">
-                <p class="text-sm leading-5 text-gray-500">
-                  Are you sure you want to deactivate your account? All of your
-                  data will be permanently removed. This action cannot be
-                  undone.
+                <div class="h-100 text-center">
+                  <img
+                    :src="img.src"
+                    :alt="img.alt"
+                    class="h-100 object-center"
+                  />
+                </div>
+                <p
+                  class="absolute bottom-0 inset-x-0 p-2 bg-gray-800 bg-opacity-75 text-center text-white z-10"
+                >
+                  {{ img.caption }}
                 </p>
               </div>
-            </div>
+            </agile>
+          </client-only>
+          <h4 class="my-2 text-xl font-medium text-indigo-600">
+            {{ project.title }}
+          </h4>
+          <div class="mb-3 text-gray-700">
+            <p>{{ project.description }}</p>
+          </div>
+          <div v-if="project.stack">
+            <p class="mb-1 font-medium text-gray-800">Built with:</p>
+            <ul class="flex flex-wrap text-sm space-x-2">
+              <li
+                v-for="(tech, i) in project.stack"
+                :key="i"
+                class="mb-2 px-3 py-1 bg-gray-300 text-gray-900 rounded-sm"
+              >
+                {{ tech }}
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-          <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-            <button
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-              @click="closeModal"
+        <div class="bg-gray-100 px-4 py-3 sm:px-6 flex text-sm">
+          <span v-if="project.url" class="mr-3">
+            <a
+              :href="project.url"
+              target="_blank"
+              class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+              >Visit Site</a
             >
-              Deactivate
-            </button>
           </span>
-          <span class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto">
-            <button
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-              @click="closeModal"
+          <span v-if="project.github_url" class="mr-3">
+            <a
+              :href="project.github_url"
+              target="_blank"
+              class="px-3 py-1 bg-teal-500 text-white rounded hover:bg-teal-600"
+              >View on Github</a
             >
-              Cancel
-            </button>
+          </span>
+          <span v-if="project.packagist_url" class="mr-3">
+            <a
+              :href="project.packagist_url"
+              target="_blank"
+              class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600"
+              >View on Packagist</a
+            >
           </span>
         </div>
       </div>
@@ -128,4 +154,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.agile--ssr .agile__slides > * {
+  overflow: hidden;
+  width: 0;
+}
+
+.agile--ssr .agile__slides > *:first-child {
+  width: 100%;
+}
+</style>

@@ -48,7 +48,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async initState({ commit }) {
+  async initState({ commit, state }) {
     const projects = ProjectRepository.all()
 
     commit('setProjects', projects)
@@ -57,6 +57,8 @@ export const actions = {
     await commit('setCategories', CategoryRepository.all())
     await commit('setCurrentCategory', CategoryRepository.all()[0])
     commit('filterProjects')
+    // Modal test
+    commit('setCurrent', state.projects[0])
   },
   async updateCurrentCategory({ state, commit }, category) {
     await commit('setCurrentCategory', category)

@@ -13,7 +13,26 @@ const projects = [
       'Weekend Challenge. JobHuntBuddy is a web app helping job hunters manage the application process.',
     image: '/images/jobhuntbuddy_2.png',
     category: 'Web Apps',
-    tags: ['SaaS', 'Laravel', 'Vue.js']
+    tags: ['SaaS', 'Laravel', 'Vue.js'],
+    stack: ['Laravel', 'Vue.js', 'Livewire', 'Stripe', 'Google Analytics'],
+    images: [
+      {
+        src: '/images/projects/jobhuntbuddy/landing-page.png',
+        alt: 'landing page',
+        caption: 'Landing page'
+      },
+      {
+        src: '/images/projects/jobhuntbuddy/lead_modal.png',
+        alt: 'lead modal',
+        caption:
+          'Breakdown of a lead. See everything related to a job application in one place.'
+      },
+      {
+        src: '/images/projects/jobhuntbuddy/LeadsIndexShrunkWithTask.png',
+        alt: 'lead index',
+        caption: 'Kanban board view of all leads'
+      }
+    ]
   },
   {
     title: 'Siegrs.GG',
