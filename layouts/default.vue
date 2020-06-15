@@ -3,16 +3,19 @@
     <Navbar />
     <Header />
     <nuxt />
+    <ProjectModal />
   </div>
 </template>
 
 <script>
 import Navbar from '@/layouts/partials/Navbar'
 import Header from '@/layouts/partials/Header'
+import ProjectModal from '@/components/ProjectModal'
 export default {
   components: {
     Header,
-    Navbar
+    Navbar,
+    ProjectModal
   }
 }
 </script>

@@ -2,6 +2,7 @@ import ProjectRepository from '@/repositories/ProjectRepository'
 import CategoryRepository from '@/repositories/CategoryRepository'
 
 export const state = () => ({
+  current: {},
   currentTag: '',
   currentCategory: {},
 
@@ -15,6 +16,9 @@ export const state = () => ({
 export const mutations = {
   setTags(state, tags) {
     state.tags = tags
+  },
+  setCurrent(state, project) {
+    state.current = project
   },
   setCategories(state, categories) {
     state.categories = categories
@@ -63,6 +67,9 @@ export const actions = {
   async updateCurrentTag({ commit }, tag) {
     await commit('setCurrentTag', tag)
     commit('filterProjects')
+  },
+  setCurrentProject({ commit }, project) {
+    commit('setCurrent', project)
   }
 }
 

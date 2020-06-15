@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="relative flex flex-col bg-gray-700 rounded-lg shadow overflow-hidden"
-  >
+  <div class="relative flex flex-col bg-gray-700 rounded-lg shadow">
     <span
       class="absolute top-0 right-0 m-3 py-1 px-3 text-sm text-white rounded opacity-75 hover:opacity-100"
       :class="categoryTagColor"
@@ -38,7 +36,9 @@
             </svg>
           </span>
         </a>
-        <a href="#" class="text-teal-300 hover:underline">Read more</a>
+        <a href="#" class="text-teal-300 hover:underline" @click="openModal"
+          >Read more</a
+        >
       </div>
     </div>
   </div>
@@ -59,6 +59,11 @@ export default {
           (c) => c.name === this.project.category
         )?.bgColor || 'bg-red-500'
       )
+    }
+  },
+  methods: {
+    openModal() {
+      this.$store.dispatch('projects/setCurrentProject', this.project)
     }
   }
 }
