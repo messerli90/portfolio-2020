@@ -1,12 +1,17 @@
 <template>
   <div>
-    <h2 class="mt-8 text-center text-4xl font-semibold text-gray-100">
-      Things I've built
+    <h2 class="my-4 text-center text-4xl font-semibold text-gray-100">
+      Some of my projects
     </h2>
     <CategoryFilter />
     <TagFilter />
     <div class="mx-auto my-4 max-w-4xl grid md:grid-cols-2 gap-6">
-      <ProjectCard v-for="(p, i) in projects" :key="i" :project="p" />
+      <ProjectCard
+        v-for="(p, i) in projects"
+        :key="i"
+        :project="p"
+        class="transform transition-all"
+      />
     </div>
   </div>
 </template>

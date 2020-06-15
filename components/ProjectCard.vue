@@ -1,18 +1,26 @@
 <template>
-  <div class="relative bg-gray-700 rounded-lg shadow overflow-hidden">
+  <div
+    class="relative flex flex-col bg-gray-700 rounded-lg shadow overflow-hidden"
+  >
     <span
       class="absolute top-0 right-0 m-3 py-1 px-3 text-sm text-white rounded opacity-75 hover:opacity-100"
       :class="categoryTagColor"
     >
       {{ project.category }}
     </span>
-    <img :src="project.image" alt="" class="w-full h-40 object-cover" />
-    <div class="px-4 py-3">
+    <span class="overflow-hidden">
+      <img
+        :src="project.image"
+        alt=""
+        class="w-full h-40 flex-shrink-0 object-cover transition transform duration-200 ease-in-out hover:scale-105"
+      />
+    </span>
+    <div class="flex-1 px-4 py-3 flex flex-col">
       <h5 class="my-1 tracking-wide text-lg text-orange-500 font-medium">
         {{ project.title }}
       </h5>
       <p class="mb-3 text-gray-400">{{ project.description }}</p>
-      <div class="flex justify-between items-baseline">
+      <div class="mt-auto flex justify-between items-baseline">
         <a
           :href="project.url"
           target="_blank"

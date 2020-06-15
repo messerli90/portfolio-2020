@@ -44,14 +44,15 @@ export const mutations = {
 }
 
 export const actions = {
-  initState({ commit }) {
+  async initState({ commit }) {
     const projects = ProjectRepository.all()
 
     commit('setProjects', projects)
     commit('setFilteredProjects', projects)
     commit('setTags', getTagsFromProjects(projects))
-    commit('setCategories', CategoryRepository.all())
-    commit('setCurrentCategory', CategoryRepository.all()[0])
+    await commit('setCategories', CategoryRepository.all())
+    await commit('setCurrentCategory', CategoryRepository.all()[0])
+    commit('filterProjects')
   },
   async updateCurrentCategory({ state, commit }, category) {
     await commit('setCurrentCategory', category)
