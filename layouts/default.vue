@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-700 min-h-screen">
+  <div class="antialiasedbg-gray-200 min-h-screen">
     <nav class="bg-gray-800 text-white">
       <div class="container mx-auto pt-6 pb-32 -mb-24 flex items-center justify-between">
         <div class="text-3xl">

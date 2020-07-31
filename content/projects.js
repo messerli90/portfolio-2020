@@ -7,7 +7,7 @@ export default [
       'Weekend Challenge. JobHuntBuddy is a web app helping job hunters manage the application process.',
     image: '/images/jobhuntbuddy_2.png',
     category: 'Web Apps',
-    tags: ['SaaS', 'Laravel', 'Vue.js'],
+    tags: ['SaaS', 'Laravel', 'Vue.js', 'PHP'],
     stack: ['Laravel', 'Vue.js', 'Livewire', 'Stripe', 'Google Analytics'],
     images: [
       {
