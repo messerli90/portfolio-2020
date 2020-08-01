@@ -1,21 +1,18 @@
 <template>
-  <div class="container mx-auto mb-16 rounded shadow">
-    <header>
-      <div
-        v-if="article.cover_image"
-        class="relative py-12 lg:py-20 rounded-t overflow-hidden flex justify-center items-center bg-blue-100"
-      >
-        <img
-          :src="article.cover_image"
-          :alt="article.title"
-          class="absolute inset-0 w-full h-full object-cover opacity-75"
-        />
-        <h2
-          class="z-10 px-6 text-3xl lg:text-5xl text-center font-bold max-w-4xl text-blue-900 bg-blue-100 rounded-sm shadow-xs"
-        >{{ article.title }}</h2>
-      </div>
+  <div class="mb-16">
+    <header class="pb-8 flex flex-col items-center bg-gray-800">
+      <h3>
+        <NuxtLink
+          :to="{ name: 'projects' }"
+          class="uppercase text-2xl text-orange-500 hover:text-orange-600"
+        >Projects</NuxtLink>
+      </h3>
+      <h1
+        class="mb-4 text-4xl md:text-6xl text-center font-semibold text-gray-200 leading-tight"
+      >{{ project.title }}</h1>
     </header>
-    <nav class="px-6 py-3 text-sm font-light">
+
+    <nav class="container mx-auto px-6 py-3 text-sm font-light">
       <ul class="flex flex-wrap items-center">
         <li class="mr-2">
           <NuxtLink to="/" class="h-4 text-gray-600 hover:text-gray-800">
@@ -36,16 +33,20 @@
         </li>
         <li class="mx-2 text-gray-600">//</li>
         <li>
-          <NuxtLink :to="{ name: 'blog' }" class="text-orange-500 hover:text-orange-600">Blog</NuxtLink>
+          <NuxtLink
+            :to="{ name: 'projects' }"
+            class="text-orange-500 hover:text-orange-600"
+          >Projects</NuxtLink>
         </li>
         <li class="mx-2 text-gray-600">//</li>
-        <li class="text-gray-800">{{ article.title }}</li>
+        <li class="text-gray-800">{{ project.title }}</li>
         <li class="ml-auto text-gray-800">{{ createdDate }}</li>
       </ul>
     </nav>
-    <main class="container mx-auto p-6 bg-white flex justify-center">
+
+    <main class="container mx-auto px-3 py-10 bg-white flex justify-center rounded shadow">
       <article class="prose prose-sm lg:prose-lg max-w-4xl">
-        <nuxt-content :document="article" />
+        <nuxt-content :document="project" />
       </article>
     </main>
   </div>
@@ -55,14 +56,14 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const article = await $content("articles", params.slug).fetch();
+    const project = await $content("projects", params.slug).fetch();
 
-    return { article };
+    return { project };
   },
 
   computed: {
     createdDate() {
-      const date = new Date(this.article.createdAt);
+      const date = new Date(this.project.createdAt);
       const dateTimeFormat = new Intl.DateTimeFormat("en", {
         year: "numeric",
         month: "short",

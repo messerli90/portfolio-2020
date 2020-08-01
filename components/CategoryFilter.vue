@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-3 mx-auto max-w-xl grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+  <div class="mb-5 mx-auto max-w-xl grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
     <CategoryFilterItem
       v-for="(category, i) in categories"
       :key="i"

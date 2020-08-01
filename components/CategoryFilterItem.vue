@@ -1,7 +1,7 @@
 <template>
   <button
     role="button"
-    class="p-3 flex flex-row md:flex-col justify-start md:justify-center items-center hover:bg-orange-200 rounded-lg transition transform duration-300 ease-in-out hover:scale-105"
+    class="p-3 flex flex-row md:flex-col justify-start md:justify-center items-center bg-opacity-75 hover:bg-orange-500 hover:bg-opacity-25 rounded-lg transition transform duration-300 ease-in-out hover:scale-105"
     :class="{ 'bg-orange-500 hover:bg-orange-500 shadow': active }"
     @click="setCurrent"
   >
@@ -10,7 +10,7 @@
         <path clip-rule="evenodd" fill-rule="evenodd" :d="category.icon" />
       </svg>
     </span>
-    <span :class="active ? 'text-white': 'text-orange-500'">{{ category.name }}</span>
+    <span :class="active ? 'text-orange-200': 'text-orange-500'">{{ category.name }}</span>
   </button>
 </template>
 

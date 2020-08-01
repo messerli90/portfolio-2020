@@ -1,11 +1,11 @@
 <template>
-  <div class="relative flex flex-col bg-gray-700 rounded-lg shadow">
+  <div class="relative flex flex-col bg-gray-700 rounded-lg shadow overflow-hidden">
     <span
       class="absolute top-0 right-0 m-3 py-1 px-3 text-sm text-white rounded opacity-75 hover:opacity-100"
     >{{ project.category }}</span>
     <span class="overflow-hidden">
       <img
-        :src="project.image"
+        :src="project.cover_image"
         alt
         class="w-full h-40 flex-shrink-0 object-cover transition transform duration-200 ease-in-out hover:scale-105"
       />
@@ -31,7 +31,10 @@
             </svg>
           </span>
         </a>
-        <a href="#" class="text-teal-300 hover:underline" @click="openModal">Read more</a>
+        <NuxtLink
+          :to="{ name: 'projects-slug', params: { slug: project.slug } }"
+          class="text-teal-300 hover:underline"
+        >Read more</NuxtLink>
       </div>
     </div>
   </div>
@@ -50,7 +53,8 @@ export default {
   },
   methods: {
     openModal() {
-      console.log("open modal");
+      this.$emit("project-selected", this.project);
+      // console.log("open modal");
     },
   },
 };
