@@ -6,7 +6,9 @@
 */
 module.exports = {
   theme: {},
-  variants: {},
+  variants: {
+    borderWidth: ['responsive', 'hover', 'focus', 'last']
+  },
   plugins: [
     require('@tailwindcss/typography'),
   ],

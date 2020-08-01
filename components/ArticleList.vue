@@ -1,13 +1,13 @@
 <template>
-  <ul class="rounded-lg shadow overflow-hidden">
-    <li v-for="article of articles" :key="article.slug" class="px-6 py-3 border-b">
-      <h3 class="text-lg text-gray-800 font-medium">
+  <ul class>
+    <li v-for="article of articles" :key="article.slug" class="px-2 py-6 border-b last:border-b-0">
+      <h3 class="text-xl text-gray-800 font-semibold">
         <NuxtLink
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
           class="hover:text-gray-900 hover:underline"
         >{{ article.title }}</NuxtLink>
       </h3>
-      <p class="text-lg text-gray-700">{{ article.description }}</p>
+      <p class="text-xl text-gray-700 font-light">{{ article.description }}</p>
     </li>
   </ul>
 </template>

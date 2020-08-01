@@ -1,6 +1,7 @@
 ---
 title: Create a Kanban Board with VueJS
 description: Setting up our project and building the Kanban board
+cover_image: 'https://images.unsplash.com/photo-1590402494587-44b71d7772f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60'
 ---
 
 # Setting up our project and building the Kanban boards

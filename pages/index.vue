@@ -1,12 +1,12 @@
 <template>
-  <div class="container mx-auto p-6 bg-white rounded shadow">
-    <div>
-      <h1 class="title">nuxt-blog</h1>
-      <p>my blog</p>
-    </div>
-    <div class="">
+  <div>
+    <header class="flex flex-col items-center">
+      <h2 class="mb-16 text-5xl text-gray-100 font-bold">Blog Posts</h2>
+      <!-- <p class="py-6 text-lg text-center text-gray-300">Things I've built</p> -->
+    </header>
+    <main class="container mx-auto px-2 bg-white rounded shadow">
       <ArticleList :articles="articles" />
-    </div>
+    </main>
   </div>
 </template>
 
