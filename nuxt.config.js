@@ -47,6 +47,26 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      suffix: false,
+      proIcons: { // if you have bought the Pro packages
+        // list the icons you want to add, not listed icons will be tree-shaked
+        solid: [
+          'faHome',
+          'faHeart'
+        ],
+        duotone: [
+          'faBoxOpen'
+        ],
+      },
+      icons: {
+        brands: [
+          'faTwitter',
+          'faGithub'
+        ]
+      }
+    }]
   ],
   /*
   ** Nuxt.js modules

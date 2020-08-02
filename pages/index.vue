@@ -4,13 +4,17 @@
       <div class="container mx-auto text-gray-200">
         <!-- <p class="text-4xl md:text-4xl text-center md:text-left">Hi 👋 I'm...</p> -->
         <h1 class="text-5xl md:text-6xl font-semibold text-gray-200 leading-tight">Michael Messerli</h1>
-        <div class="mt-3 space-y-3 font-thin">
+        <div class="mt-3 space-y-3 font-thin max-w-4xl">
           <p class="text-2xl md:text-3xl text-gray-400">
             <span class="font-semibold text-indigo-300">Full Stack Developer</span>
             who's first love is
-            <span
-              class="font-semibold text-red-500"
-            >Laravel &amp; VueJS</span> but
+            <span class="font-semibold text-red-500">
+              Laravel
+              <span class="opacity-50">//</span>
+              PHP
+              <span class="opacity-50">//</span>
+              VueJS
+            </span> but
             enjoys tinkering and exploring new stacks
           </p>
           <!-- <p class="text-2xl md:text-3xl text-gray-400">I build stuff on the internet</p> -->

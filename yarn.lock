@@ -825,6 +825,63 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fortawesome/fontawesome-common-types@^0.2.30":
+  version "0.2.30"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.30.tgz#2f1cc5b46bd76723be41d0013a8450c9ba92b777"
+  integrity sha512-TsRwpTuKwFNiPhk1UfKgw7zNPeV5RhNp2Uw3pws+9gDAkPGKrtjR1y2lI3SYn7+YzyfuNknflpBA1LRKjt7hMg==
+
+"@fortawesome/fontawesome-pro@^5.14.0":
+  version "5.14.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/5.14.0/fontawesome-pro-5.14.0.tgz#0fef6462ad9450211cfbf6ce3f6e9bb8353a4982"
+  integrity sha512-mdxmCa8yHPXaM5WTRskL1iQf6JObI+l7R0Qa0/u9QOpmRUBkv1g/B3q+YQPaQmZOUy/5gZD9iwun5x4IELusWA==
+
+"@fortawesome/fontawesome-svg-core@^1.2.27":
+  version "1.2.30"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.30.tgz#f56dc6791861fe5d1af04fb8abddb94658c576db"
+  integrity sha512-E3sAXATKCSVnT17HYmZjjbcmwihrNOCkoU7dVMlasrcwiJAHxSKeZ+4WN5O+ElgO/FaYgJmASl8p9N7/B/RttA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/free-brands-svg-icons@^5.14.0":
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.14.0.tgz#98555518ba41bdff82fbae2f4d1bc36cd3b1c043"
+  integrity sha512-WsqPFTvJFI7MYkcy0jeFE2zY+blC4OrnB9MJOcn1NxRXT/sSfEEhrI7CwzIkiYajLiVDBKWeErYOvpsMeodmCQ==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/free-solid-svg-icons@^5.14.0":
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.14.0.tgz#970453f5e8c4915ad57856c3a0252ac63f6fec18"
+  integrity sha512-M933RDM8cecaKMWDSk3FRYdnzWGW7kBBlGNGfvqLVwcwhUPNj9gcw+xZMrqBdRqxnSXdl3zWzTCNNGEtFUq67Q==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/pro-duotone-svg-icons@^5.14.0":
+  version "5.14.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-duotone-svg-icons/-/5.14.0/pro-duotone-svg-icons-5.14.0.tgz#475d982c7115114a97b2a21af0a80f393eb33096"
+  integrity sha512-PUJTkwVVO0DawDdQF/RGzj65bQpU9qlp4Aa5AaQ9taF+7vDD5n9WMPttzNiuCxoBDC40fTh9SdenhiNW+Dlybg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/pro-regular-svg-icons@^5.14.0":
+  version "5.14.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.14.0/pro-regular-svg-icons-5.14.0.tgz#3c5847396fee6591c1d1086548ba4dce4d8d6d66"
+  integrity sha512-DYJktCkmPWds7p0eKWwBmOp2BZuvuzh0a8/oc8MMIJX3D3fX4BXiJqgpdcDRTd21t2pC91X0B5LTt589TNtBjQ==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/pro-solid-svg-icons@^5.14.0":
+  version "5.14.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.14.0/pro-solid-svg-icons-5.14.0.tgz#8da47f25a043acd4f47b837a4a696166415c9b97"
+  integrity sha512-+xtjbIy/bjzs4Rv/227uPJQ+b4GNdrW6MP4hWGI/VX33wgMaw+NekK4AK2UC0EDZBqYHp9+8hDzjTE6BxAz0lw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.30"
+
+"@fortawesome/vue-fontawesome@^0.1.9":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.10.tgz#eeeec1e4e8850bed0468f938292b06cda793bf34"
+  integrity sha512-b2+SLF31h32LSepVcXe+BQ63yvbq5qmTCy4KfFogCYm2bn68H5sDWUnX+U7MBqnM2aeEk9M7xSoqGnu+wSdY6w==
+
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.3.0.tgz#50a954757ec78696615d3e118e3fee2d9291882e"
@@ -1212,6 +1269,14 @@
     webpack-hot-middleware "^2.25.0"
     webpack-node-externals "^2.5.0"
     webpackbar "^4.0.0"
+
+"@nuxtjs/fontawesome@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/fontawesome/-/fontawesome-1.1.2.tgz#0add6519095b392bdffb6e3ad40f3026d20f5c44"
+  integrity sha512-QAfo7hdc6hiCOohdR861oNQ+riKW/kD22bYyvaC++xXiiC1hBQcrRQ6xXd5gln+6SKCwT09+C4kGjzTgrwtr7w==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.27"
+    "@fortawesome/vue-fontawesome" "^0.1.9"
 
 "@nuxtjs/tailwindcss@^2.1.0":
   version "2.1.1"

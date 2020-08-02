@@ -12,7 +12,7 @@
       >{{ project.title }}</h1>
     </header>
 
-    <nav class="container mx-auto px-6 py-3 text-sm font-light">
+    <nav class="container mx-auto my-2 px-6 py-3 text-sm font-light">
       <ul class="flex flex-wrap items-center">
         <li class="mr-2">
           <NuxtLink to="/" class="h-4 text-gray-600 hover:text-gray-800">
@@ -31,29 +31,71 @@
             </svg>
           </NuxtLink>
         </li>
-        <li class="mx-2 text-gray-600">//</li>
+        <li class="mx-2 text-gray-600 opacity-75">//</li>
         <li>
           <NuxtLink
             :to="{ name: 'projects' }"
-            class="text-orange-500 hover:text-orange-600"
+            class="text-gray-700 hover:text-gray-900 hover:underline"
           >Projects</NuxtLink>
         </li>
-        <li class="mx-2 text-gray-600">//</li>
+        <li class="mx-2 text-gray-600 opacity-75">//</li>
         <li class="text-gray-800">{{ project.title }}</li>
         <li class="ml-auto text-gray-800">{{ createdDate }}</li>
       </ul>
     </nav>
 
-    <main class="container mx-auto px-3 py-10 bg-white flex justify-center rounded shadow">
-      <article class="prose prose-sm lg:prose-lg max-w-4xl">
-        <nuxt-content :document="project" />
-      </article>
-    </main>
+    <div class="container mx-auto flex">
+      <main class="px-3 flex-1">
+        <article class="prose prose-sm lg:prose-lg max-w-4xl">
+          <nuxt-content :document="project" />
+        </article>
+      </main>
+      <aside class="flex-1 max-w-xs px-6">
+        <div class="space-y-4">
+          <client-only v-if="project.url">
+            <a
+              :href="project.url"
+              class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
+            >
+              <span class="absolute left-0 py-2 pl-4">
+                <fa :icon="faGlobe" class="mr-6 text-base" />
+              </span>
+              View Website
+            </a>
+          </client-only>
+          <client-only v-if="project.packagist_url">
+            <a
+              :href="project.packagist_url"
+              class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
+            >
+              <span class="absolute left-0 py-2 pl-4">
+                <fa :icon="faBoxOpen" class="mr-6 text-base" />
+              </span>
+              View on Packagist
+            </a>
+          </client-only>
+          <client-only v-if="project.github_url">
+            <a
+              :href="project.github_url"
+              class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
+            >
+              <span class="absolute left-0 py-2 pl-4">
+                <fa :icon="faGithub" class="mr-6 text-base" />
+              </span>
+              View on Github
+            </a>
+          </client-only>
+        </div>
+      </aside>
+    </div>
   </div>
 </template>
 
 
 <script>
+import { faBoxOpen } from "@fortawesome/pro-duotone-svg-icons";
+import { faGlobe } from "@fortawesome/pro-duotone-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default {
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
@@ -62,6 +104,15 @@ export default {
   },
 
   computed: {
+    faBoxOpen() {
+      return faBoxOpen;
+    },
+    faGithub() {
+      return faGithub;
+    },
+    faGlobe() {
+      return faGlobe;
+    },
     createdDate() {
       const date = new Date(this.project.createdAt);
       const dateTimeFormat = new Intl.DateTimeFormat("en", {
