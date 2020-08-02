@@ -2,6 +2,7 @@
 title: My Development Environment
 description: Breakdown of my development environment in 2020
 cover_image: 'https://images.unsplash.com/photo-1444201716572-c60ec66d0494?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80'
+createdAt: 2020-02-16
 ---
 
 # Hardware

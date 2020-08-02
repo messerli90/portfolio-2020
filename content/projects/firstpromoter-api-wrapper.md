@@ -6,6 +6,7 @@ packagist_url: 'https://packagist.org/packages/messerli90/first_promoter'
 github_url: 'https://github.com/messerli90/first_promoter'
 category: 'Packages'
 tags: ['Open Source', 'Laravel']
+createdAt: 2019-02-21
 ---
 
 # FirstPromoter API Wrapper

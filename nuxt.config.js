@@ -15,6 +15,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Michael Messerli',
     meta: [
       { charset: 'utf-8' },
@@ -57,7 +60,8 @@ export default {
           'faHeart'
         ],
         duotone: [
-          'faBoxOpen'
+          'faBoxOpen',
+          'faGlobe'
         ],
       },
       icons: {

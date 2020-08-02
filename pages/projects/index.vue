@@ -24,7 +24,6 @@
 </template>
 
 <script>
-// import ProjectRepo from "~/content/projects";
 import CategoryRepo from "~/content/categories";
 import TagRepo from "~/content/tags";
 import ProjectCard from "~/components/ProjectCard";
@@ -39,7 +38,6 @@ export default {
       currentCategory: "Web Apps",
       currentTags: [],
       selectedProject: null,
-      marked: [],
     };
   },
   computed: {
@@ -51,7 +49,6 @@ export default {
         projects = projects.filter((p) =>
           p.tags.some((t) => this.currentTags.includes(t))
         );
-        console.log(projects);
       }
 
       return projects;
@@ -64,20 +61,18 @@ export default {
     },
   },
   async asyncData({ $content, params }) {
-    const markedprojects = await $content("projects").fetch();
+    const markedprojects = await $content("projects").sortBy('createdAt', 'desc').fetch();
 
     return { markedprojects };
   },
   methods: {
     setProject(project) {
-      console.log(project);
       this.selectedProject = project;
     },
     updateCurrentCategory(category) {
       this.currentCategory = category.name;
     },
     updateActiveTags(tags) {
-      console.log("updating tags");
       this.currentTags = tags;
     },
   },

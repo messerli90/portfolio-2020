@@ -23,6 +23,7 @@ images: [
         caption: 'Kanban board view of all leads'
       }
     ]
+createdAt: 2020-01-01
 ---
 
 # Job Hunting Description

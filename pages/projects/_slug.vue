@@ -54,33 +54,34 @@
         <div class="space-y-4">
           <client-only v-if="project.url">
             <a
-              :href="project.url"
+              :href="project.url" rel="noopener"
               class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
             >
               <span class="absolute left-0 py-2 pl-4">
-                <fa :icon="faGlobe" class="mr-6 text-base" />
+                <fa :icon="['fad', 'globe']" />
+                <!-- <fa :icon="faGlobe" class="mr-6 text-base" /> -->
               </span>
               View Website
             </a>
           </client-only>
           <client-only v-if="project.packagist_url">
             <a
-              :href="project.packagist_url"
+              :href="project.packagist_url" rel="noopener"
               class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
             >
               <span class="absolute left-0 py-2 pl-4">
-                <fa :icon="faBoxOpen" class="mr-6 text-base" />
+                <fa :icon="['fad', 'box-open']" class="mr-6 text-base" />
               </span>
               View on Packagist
             </a>
           </client-only>
           <client-only v-if="project.github_url">
             <a
-              :href="project.github_url"
+              :href="project.github_url" rel="noopener"
               class="relative flex items-center pl-16 py-2 bg-gray-600 text-white text-lg font-semibold rounded transition-colors duration-200 ease-in-out hover:bg-gray-700 hover:shadow-inner"
             >
               <span class="absolute left-0 py-2 pl-4">
-                <fa :icon="faGithub" class="mr-6 text-base" />
+                <fa :icon="['fab', 'github']" class="mr-6 text-base" />
               </span>
               View on Github
             </a>
@@ -93,9 +94,6 @@
 
 
 <script>
-import { faBoxOpen } from "@fortawesome/pro-duotone-svg-icons";
-import { faGlobe } from "@fortawesome/pro-duotone-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default {
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
@@ -104,15 +102,6 @@ export default {
   },
 
   computed: {
-    faBoxOpen() {
-      return faBoxOpen;
-    },
-    faGithub() {
-      return faGithub;
-    },
-    faGlobe() {
-      return faGlobe;
-    },
     createdDate() {
       const date = new Date(this.project.createdAt);
       const dateTimeFormat = new Intl.DateTimeFormat("en", {
@@ -127,7 +116,7 @@ export default {
         ,
         { value: year },
       ] = dateTimeFormat.formatToParts(date);
-      console.log(`${day}-${month}-${year}`);
+      
       return `${day} - ${month} - ${year}`;
     },
   },

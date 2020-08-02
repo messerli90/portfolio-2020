@@ -1,7 +1,7 @@
 <template>
   <ul class="">
     <li v-for="article of articles" :key="article.slug" class="py-6 border-b last:border-b-0">
-      <time class="ml-auto text-gray-600 text-sm">{{ createdDate(article.createdAt) }}</time>
+      <time class="ml-auto text-gray-700 text-sm">{{ createdDate(article.createdAt) }}</time>
       <h3 class="text-3xl text-gray-800 font-semibold">
         <NuxtLink
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
@@ -36,7 +36,7 @@ export default {
         ,
         { value: year },
       ] = dateTimeFormat.formatToParts(date);
-      console.log(`${day}-${month}-${year}`);
+
       return `${day} - ${month} - ${year}`;
     },
   },

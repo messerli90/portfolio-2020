@@ -11,7 +11,7 @@
           class="absolute inset-0 w-full h-full object-cover opacity-75"
         />
         <h2
-          class="z-10 px-6 text-3xl lg:text-5xl text-center font-bold max-w-4xl text-blue-900 bg-blue-100 rounded-sm shadow-xs"
+          class="z-10 px-6 text-3xl lg:text-5xl text-center font-bold max-w-4xl text-blue-900 bg-blue-100 rounded-sm shadow-xs bg-opacity-50"
         >{{ article.title }}</h2>
       </div>
     </header>
@@ -44,7 +44,7 @@
       </ul>
     </nav>
     <main class="container mx-auto p-6 bg-white flex justify-center">
-      <article class="prose prose-sm lg:prose-lg max-w-4xl">
+      <article class="flex-1 prose prose-sm lg:prose-lg max-w-4xl">
         <nuxt-content :document="article" />
       </article>
     </main>
@@ -75,7 +75,7 @@ export default {
         ,
         { value: year },
       ] = dateTimeFormat.formatToParts(date);
-      console.log(`${day}-${month}-${year}`);
+      
       return `${day} - ${month} - ${year}`;
     },
   },

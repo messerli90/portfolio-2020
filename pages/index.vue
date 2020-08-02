@@ -23,12 +23,14 @@
             <a
               href="https://jobhuntbuddy.co"
               target="_blank"
+              rel="noopener"
               class="mr-2 font-semibold text-orange-500 hover:underline"
             >JobHuntBuddy</a>
             🔫
             <a
               href="https://siegrs.gg"
               target="_blank"
+              rel="noopener"
               class="mr-3 font-semibold text-orange-500 hover:underline"
             >Siegrs.GG</a> and
             <NuxtLink to="/projects" class="mx-3 font-semibold text-orange-500 hover:underline">more</NuxtLink>

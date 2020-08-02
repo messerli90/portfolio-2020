@@ -12,6 +12,7 @@ images: [
         caption: ''
       }
     ]
+createdAt: 2019-08-01
 ---
 
 # JobHuntBuddy (Open Source)
